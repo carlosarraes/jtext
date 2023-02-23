@@ -28,4 +28,14 @@ public class GuessingGame {
   public int getNumberOfTries() {
     return numberOfTries;
   }
+
+  public static void main(String[] args) {
+    GuessingGame game = new GuessingGame();
+    while (game.getNumberOfTries() < 4) {
+      String input = System.console().readLine("Guess a number between 1 and 10: ");
+      String output = game.guess(Integer.parseInt(input));
+      System.out.println(output);
+      if (output.contains("got it")) break;
+    }
+  }
 }
